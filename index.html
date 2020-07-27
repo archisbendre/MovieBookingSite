@@ -1,0 +1,256 @@
+
+<!--Name: Archis Girsh Bendre  Student No:10504140 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Click To Book</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    
+
+</head>
+
+<!--The template is referenced from https://www.w3schools.com/-->
+<div class="topnav">
+        <h2 style="text-align: center">Click To Book</h2>
+      </div>
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#movies">Features</a>
+        <!--As the registeration button is clicked the website will navigate the users to the registeration form-->
+        <a href="form.html">Register</a>
+        <a href="#about">About</a>
+        
+        <input type="text" placeholder="Search..">
+        </div>
+<body style="background:black">
+<!--The search bar displays the movies from the 3rd party API.The API is called from the file main.js
+The movies with similar names are displayed from the 3rd party API are displayed when you search for a movie name in the search bar for eg="home"-->
+    <div class="container">
+        <div class="jumbotron">
+            <h3 class="text-center">Search for any movie</h3>
+            <form id = "searchForm">
+                <input type="text" class="form-control" id="searchText" placeholder="Search movies.....">
+                
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="movies" class="row"></div>
+    </div>
+
+    <main role="main">
+
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+        
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides">
+                <div class="numbertext">1 / 3</div>
+                <img src="cm.jpg" style="width:100%">
+                <div class="text">Captian Marvel</div>
+              </div>
+        
+              <div class="mySlides">
+                <div class="numbertext">2 / 3</div>
+                <img src="sm.jpg" style="width:100%">
+                <div class="text">Spider Man:Homecoming</div>
+              </div>
+        
+              <div class="mySlides">
+                <div class="numbertext">3 / 3</div>
+                <img src="am.jpg" style="width:100%">
+                <div class="text">Antman and the Wasp</div>
+              </div>
+        
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+        
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        
+        
+            </div>
+        <!--Javascript code for the slideshow display-->
+            <script>
+              var slideIndex = 1;
+              showSlides(slideIndex);
+        
+              // Next/previous controls
+              function plusSlides(n) {
+                showSlides(slideIndex += n);
+              }
+        
+              // Thumbnail image controls
+              function currentSlide(n) {
+                showSlides(slideIndex = n);
+              }
+        
+              function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+              }
+            </script>
+        <!--The movies displayed below are the standard movies from the API-->
+        
+            <div class="album py-5">
+              <div class="container">
+        
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="avengers.jpg" alt="avengers" width="100%" height="225" />
+                      <div class="card-body">
+        
+                        <title>Avengers : Infinity War</title>
+                        <p class="card-text">Avengers:Infinity War</p>
+        
+                        <div class="d-flex justify-content-between align-items-center">
+        
+                          <div class="btn-group">
+                              <!--As the 'book' button is clicked,the website will take you to the timings chart for the movie-->
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                              <a href="movie.html">Book</a>
+                            </button>
+                           
+        
+                          </div>
+                          <small class="text-muted"> 65 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="ironman.jpg" alt="ironman" width="100%" height="225" />
+        
+                      <div class="card-body">
+                        <title>Iron Man</title>
+                        <p class="card-text">Iron Man 2</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <a href="movie.html">Book</a>
+                            </button>
+                           
+                          </div>
+                          <small class="text-muted">55 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="cap.jpg" alt="cap" width="100%" height="225" />
+                      <div class="card-body">
+                        <p class="card-text">Captain America : Winter Soldier</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <a href="movie.html">Book</a>
+                            </button>
+                           
+                          </div>
+                          <small class="text-muted">56 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="thor.jpg" alt="thor" width="100%" height="225" />
+                      <div class="card-body">
+                        <p class="card-text">Thor 2 : Dark World</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <a href="movie.html">Book</a>
+                            </button>
+                            
+                          </div>
+                          <small class="text-muted">60 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="xmen.jpg" alt="xmen" width="100%" height="225" />
+                      <div class="card-body">
+                        <p class="card-text">X-Men 2</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <a href="movie.html">Book</a>
+                            </button>
+                           
+                          </div>
+                          <small class="text-muted">40 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                      <img src="dp.jpg" alt="dp" width="100%" height="225" />
+                      <div class="card-body">
+                        <p class="card-text">Deadpool</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <a href="movie.html">Book</a>
+                            </button>
+                           
+                          </div>
+                          <small class="text-muted">40 mins</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+        
+                </div>
+              </div>
+            </div>
+            </div>
+        
+          </main>
+
+
+   <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+
+        <script src="js/main.js"></script>
+</body>
+
+</html>
